@@ -1,0 +1,40 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- My theme Cyan Indigo -->
+    <style name="MyThemeCyanIndigo" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorAccentCyanIndigo</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkCyanIndigo</item>
+        <item name="colorAccent">@color/colorAccentCyanIndigo</item>
+    </style>
+
+    <!-- My theme DeepPurplePink -->
+    <style name="MyThemeDeepPurplePink" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryDeepPurplePink</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkDeepPurplePink</item>
+        <item name="colorAccent">@color/colorAccentDeepPurplePink</item>
+    </style>
+
+    <!-- My theme GreenLime -->
+    <style name="MyThemeGreenLime" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/colorPrimaryGreenLime</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDarkGreenLime</item>
+        <item name="colorAccent">@color/colorAccentGreenLime</item>
+    </style>
+</resources>

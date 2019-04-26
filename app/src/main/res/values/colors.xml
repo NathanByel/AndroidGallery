@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <!-- My theme CyanIndigo colors -->
+    <color name="colorPrimaryCyanIndigo">#00BCD4</color>
+    <color name="colorPrimaryDarkCyanIndigo">#0097A7</color>
+    <color name="colorPrimaryLightCyanIndigo">#B2EBF2</color>
+    <color name="colorAccentCyanIndigo">#536DFE</color>
+    <color name="colorPrimaryTextCyanIndigo">#212121</color>
+    <color name="colorSecondaryTextCyanIndigo">#757575</color>
+    <color name="colorIconsCyanIndigo">#FFFFFF</color>
+    <color name="colorDividerCyanIndigo">#BDBDBD</color>
+
+    <!-- My theme PurplePink colors -->
+    <color name="colorPrimaryDeepPurplePink">#673AB7</color>
+    <color name="colorPrimaryDarkDeepPurplePink">#512DA8</color>
+    <color name="colorPrimaryLightDeepPurplePink">#D1C4E9</color>
+    <color name="colorAccentDeepPurplePink">#FF4081</color>
+    <color name="colorPrimaryTextDeepPurplePink">#212121</color>
+    <color name="colorSecondaryTextDeepPurplePink">#757575</color>
+    <color name="colorIconsDeepPurplePink">#FFFFFF</color>
+    <color name="colorDividerDeepPurplePink">#BDBDBD</color>
+
+    <!-- My theme GreenLime colors -->
+    <color name="colorPrimaryGreenLime">#4CAF50</color>
+    <color name="colorPrimaryDarkGreenLime">#388E3C</color>
+    <color name="colorPrimaryLightGreenLime">#C8E6C9</color>
+    <color name="colorAccentGreenLime">#CDDC39</color>
+    <color name="colorPrimaryTextGreenLime">#212121</color>
+    <color name="colorSecondaryTextGreenLime">#757575</color>
+    <color name="colorIconsGreenLime">#FFFFFF</color>
+    <color name="colorDividerGreenLime">#BDBDBD</color>
+</resources>
