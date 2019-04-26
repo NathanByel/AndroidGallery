@@ -17,7 +17,7 @@
             android:id="@+id/text_input_edit_text_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/NAME_INPUT_HINT_TEXT"
+            android:hint="@string/input_name_hint"
             android:singleLine="true" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -26,6 +26,6 @@
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        android:text="@string/BUTTON_LOGIN_TEXT" />
+        android:text="@string/button_login_text" />
 
 </LinearLayout>

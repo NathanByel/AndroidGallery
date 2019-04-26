@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">AndroidGallery</string>
-    <string name="NAME_INPUT_HINT_TEXT">Введите имя</string>
-    <string name="BUTTON_LOGIN_TEXT">Войти</string>
-    <string name="EMPTY_NAME_ERROR_TEXT">Имя не может быть пустым!</string>
+    <string name="input_name_hint">Введите имя</string>
+    <string name="button_login_text">Войти</string>
+    <string name="empty_name_error_text">Имя не может быть пустым!</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>

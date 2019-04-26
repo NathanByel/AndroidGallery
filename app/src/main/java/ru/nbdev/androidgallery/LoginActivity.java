@@ -45,7 +45,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void showNameError(View v) {
-        Snackbar snackbar = Snackbar.make(v, getString(R.string.EMPTY_NAME_ERROR_TEXT), Snackbar.LENGTH_LONG);
+        Snackbar snackbar = Snackbar.make(v, getString(R.string.empty_name_error_text), Snackbar.LENGTH_LONG);
         snackbar.show();
     }
 
