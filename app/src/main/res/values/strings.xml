@@ -11,10 +11,9 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
-    <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
+    <string name="button_exit_text">Закрыть</string>
+    <string name="menu_nature">Природа</string>
+    <string name="menu_vegetables">Овощи</string>
+    <string name="menu_fruits">Фрукты</string>
+    <string name="image_text">Image</string>
 </resources>

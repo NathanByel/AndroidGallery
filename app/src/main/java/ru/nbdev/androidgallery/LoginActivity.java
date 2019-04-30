@@ -14,6 +14,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private TextInputEditText textInputEditTextName;
     private Button buttonLogin;
+    private Button buttonExit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,21 +23,21 @@ public class LoginActivity extends AppCompatActivity {
 
         textInputEditTextName = findViewById(R.id.text_input_edit_text_name);
         buttonLogin = findViewById(R.id.button_login);
+        buttonExit = findViewById(R.id.button_exit);
 
         setListeners();
     }
 
     private void setListeners() {
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isNameWrong()) {
-                    showNameError(v);
-                    return;
-                }
-                runMainActivity();
+        buttonLogin.setOnClickListener(v -> {
+            if (isNameWrong()) {
+                showNameError(v);
+                return;
             }
+            runMainActivity();
         });
+
+        buttonExit.setOnClickListener(v -> finish());
     }
 
     private boolean isNameWrong() {
