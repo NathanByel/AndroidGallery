@@ -22,19 +22,26 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.Menu;
-import android.widget.ImageView;
-import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import ru.nbdev.androidgallery.recycler.ItemDecorationAlbumColumns;
+import ru.nbdev.androidgallery.recycler.RecyclerAdapter;
+import ru.nbdev.androidgallery.recycler.RecyclerItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
-    private ImageView imageView;
-    private TextView imageDescription;
     private DrawerLayout drawer;
     private Toolbar toolbar;
     private FloatingActionButton fab;
+    private RecyclerView recyclerView;
+    private RecyclerAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,14 +52,13 @@ public class MainActivity extends AppCompatActivity
         toolbarInit();
         fabInit();
         drawerInit();
+        recyclerInit();
 
         showFruits();
     }
 
     private void viewInit() {
         drawer = findViewById(R.id.drawer_layout);
-        imageView = findViewById(R.id.image);
-        imageDescription = findViewById(R.id.image_description);
     }
 
     private void toolbarInit() {
@@ -100,6 +106,22 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
     }
+
+    private void recyclerInit() {
+        final int GRID_SIZE = 2;
+        final int GRID_SPACING = 50;
+
+        recyclerView = findViewById(R.id.recycler_view);
+
+        RecyclerView.LayoutManager layoutManager = new GridLayoutManager(this, GRID_SIZE);
+        recyclerView.setLayoutManager(layoutManager);
+
+        adapter = new RecyclerAdapter(getResources(), null);
+        recyclerView.setAdapter(adapter);
+
+        recyclerView.addItemDecoration(new ItemDecorationAlbumColumns(GRID_SPACING, GRID_SIZE));
+    }
+
 
     @Override
     public void onBackPressed() {
@@ -152,17 +174,47 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void showFruits() {
-        imageView.setImageDrawable(getResources().getDrawable(R.drawable.fruits));
-        imageDescription.setText(getResources().getText(R.string.fruits_text));
+        List<RecyclerItem> imagesList = new ArrayList<>();
+        imagesList.add(new RecyclerItem(R.drawable.fruits1,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.fruits2,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.fruits3,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.fruits4,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.fruits5,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.fruits1,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.fruits2,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.fruits3,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.fruits4,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.fruits5,"text"));
+        adapter.swapData(imagesList);
     }
 
     private void showVegetables() {
-        imageView.setImageDrawable(getResources().getDrawable(R.drawable.vegetables));
-        imageDescription.setText(getResources().getText(R.string.vegetables_text));
+        List<RecyclerItem> imagesList = new ArrayList<>();
+        imagesList.add(new RecyclerItem(R.drawable.vegetables1,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.vegetables2,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.vegetables3,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.vegetables4,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.vegetables5,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.vegetables1,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.vegetables2,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.vegetables3,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.vegetables4,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.vegetables5,"text"));
+        adapter.swapData(imagesList);
     }
 
     private void showNature() {
-        imageView.setImageDrawable(getResources().getDrawable(R.drawable.nature));
-        imageDescription.setText(getResources().getText(R.string.nature_text));
+        List<RecyclerItem> imagesList = new ArrayList<>();
+        imagesList.add(new RecyclerItem(R.drawable.nature1,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.nature2,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.nature3,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.nature4,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.nature5,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.nature1,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.nature2,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.nature3,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.nature4,"text"));
+        imagesList.add(new RecyclerItem(R.drawable.nature5,"text"));
+        adapter.swapData(imagesList);
     }
 }
