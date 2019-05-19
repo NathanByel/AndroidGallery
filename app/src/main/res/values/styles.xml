@@ -18,21 +18,21 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- My theme Cyan Indigo -->
-    <style name="MyThemeCyanIndigo" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/colorAccentCyanIndigo</item>
+    <style name="MyThemeCyanIndigo" parent="AppTheme.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryCyanIndigo</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkCyanIndigo</item>
         <item name="colorAccent">@color/colorAccentCyanIndigo</item>
     </style>
 
     <!-- My theme DeepPurplePink -->
-    <style name="MyThemeDeepPurplePink" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="MyThemeDeepPurplePink" parent="AppTheme.NoActionBar">
         <item name="colorPrimary">@color/colorPrimaryDeepPurplePink</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkDeepPurplePink</item>
         <item name="colorAccent">@color/colorAccentDeepPurplePink</item>
     </style>
 
     <!-- My theme GreenLime -->
-    <style name="MyThemeGreenLime" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="MyThemeGreenLime" parent="AppTheme.NoActionBar">
         <item name="colorPrimary">@color/colorPrimaryGreenLime</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDarkGreenLime</item>
         <item name="colorAccent">@color/colorAccentGreenLime</item>

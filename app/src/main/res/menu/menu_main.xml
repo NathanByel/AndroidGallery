@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/theme_cyan"
+        android:icon="@drawable/ic_theme_1_24dp"
+        android:orderInCategory="100"
+        android:title="CyanIndigo"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/theme_purple"
+        android:icon="@drawable/ic_theme_2_24dp"
+        android:orderInCategory="200"
+        android:title="DeepPurplePink"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/theme_green"
+        android:icon="@drawable/ic_theme_3_24dp"
+        android:orderInCategory="300"
+        android:title="MyThemeGreenLime"
+        app:showAsAction="always" />
+</menu>
