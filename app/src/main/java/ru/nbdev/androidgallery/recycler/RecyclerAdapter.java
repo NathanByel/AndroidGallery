@@ -8,7 +8,6 @@ import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -16,14 +15,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import ru.nbdev.androidgallery.ImageItem;
 import ru.nbdev.androidgallery.R;
 
 public class RecyclerAdapter extends RecyclerView.Adapter {
     private static final int THUMB_WIDTH = 640;
     private Resources resources;
-    private List<RecyclerItem> items;
+    private List<ImageItem> items;
 
-    public RecyclerAdapter(Resources resources, List<RecyclerItem> items) {
+    public RecyclerAdapter(Resources resources, List<ImageItem> items) {
         this.resources = resources;
         this.items = items;
     }
@@ -39,18 +39,8 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         //((CardViewHolder) holder).textView.setCompoundDrawablesWithIntrinsicBounds(0, items.get(position), 0, 0);
-        RecyclerItem item = items.get(position);
-
-        Bitmap original = BitmapFactory.decodeResource(resources, item.getDrawableID());
-        int scaledHeight = (int) ((double) THUMB_WIDTH * original.getHeight() / original.getWidth());
-
-        Bitmap thumb = Bitmap.createScaledBitmap(original, THUMB_WIDTH, scaledHeight, true);
-        original.recycle();
-
-        Drawable drawable = new BitmapDrawable(resources, thumb);
-        drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-
-        ((CardViewHolder) holder).textView.setCompoundDrawables(null, drawable, null, null);
+        ImageItem item = items.get(position);
+        ((CardViewHolder) holder).textView.setCompoundDrawables(null, item.getPreviewThumb(resources, 100, 100), null, null);
         ((CardViewHolder) holder).textView.setText(item.getText());
     }
 
@@ -73,7 +63,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter {
         }
     }
 
-    public void swapData(List<RecyclerItem> items) {
+    public void swapData(List<ImageItem> items) {
         this.items = items;
         notifyDataSetChanged();
     }

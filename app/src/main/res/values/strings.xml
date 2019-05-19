@@ -88,4 +88,9 @@
         Velit dignissim sodales ut eu sem. Eget arcu dictum varius duis at consectetur. Scelerisque
         varius morbi enim nunc faucibus. Orci nulla pellentesque dignissim enim. Non tellus orci ac
         auctor augue mauris.</string>
+    <string name="title_activity_nature">NatureActivity</string>
+    <string name="tab_text_1">Nature 1</string>
+    <string name="tab_text_2">Nature 2</string>
+    <string name="tab_text_3">Nature 3</string>
+    <string name="some_text">Some text</string>
 </resources>
