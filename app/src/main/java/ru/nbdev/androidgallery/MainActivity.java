@@ -1,5 +1,6 @@
 package ru.nbdev.androidgallery;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -32,7 +33,6 @@ import java.util.List;
 
 import ru.nbdev.androidgallery.recycler.ItemDecorationAlbumColumns;
 import ru.nbdev.androidgallery.recycler.RecyclerAdapter;
-import ru.nbdev.androidgallery.recycler.RecyclerItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -174,47 +174,37 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void showFruits() {
-        List<RecyclerItem> imagesList = new ArrayList<>();
-        imagesList.add(new RecyclerItem(R.drawable.fruits1,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.fruits2,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.fruits3,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.fruits4,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.fruits5,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.fruits1,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.fruits2,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.fruits3,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.fruits4,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.fruits5,"text"));
+        List<ImageItem> imagesList = new ArrayList<>();
+        imagesList.add(new ImageItem(R.drawable.fruits1,"text"));
+        imagesList.add(new ImageItem(R.drawable.fruits2,"text"));
+        imagesList.add(new ImageItem(R.drawable.fruits3,"text"));
+        imagesList.add(new ImageItem(R.drawable.fruits4,"text"));
+        imagesList.add(new ImageItem(R.drawable.fruits5,"text"));
+        imagesList.add(new ImageItem(R.drawable.fruits1,"text"));
+        imagesList.add(new ImageItem(R.drawable.fruits2,"text"));
+        imagesList.add(new ImageItem(R.drawable.fruits3,"text"));
+        imagesList.add(new ImageItem(R.drawable.fruits4,"text"));
+        imagesList.add(new ImageItem(R.drawable.fruits5,"text"));
         adapter.swapData(imagesList);
     }
 
     private void showVegetables() {
-        List<RecyclerItem> imagesList = new ArrayList<>();
-        imagesList.add(new RecyclerItem(R.drawable.vegetables1,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.vegetables2,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.vegetables3,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.vegetables4,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.vegetables5,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.vegetables1,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.vegetables2,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.vegetables3,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.vegetables4,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.vegetables5,"text"));
+        List<ImageItem> imagesList = new ArrayList<>();
+        imagesList.add(new ImageItem(R.drawable.vegetables1,"text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables2,"text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables3,"text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables4,"text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables5,"text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables1,"text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables2,"text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables3,"text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables4,"text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables5,"text"));
         adapter.swapData(imagesList);
     }
 
     private void showNature() {
-        List<RecyclerItem> imagesList = new ArrayList<>();
-        imagesList.add(new RecyclerItem(R.drawable.nature1,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.nature2,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.nature3,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.nature4,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.nature5,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.nature1,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.nature2,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.nature3,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.nature4,"text"));
-        imagesList.add(new RecyclerItem(R.drawable.nature5,"text"));
-        adapter.swapData(imagesList);
+        Intent intent = new Intent(MainActivity.this, NatureActivity.class);
+        startActivity(intent);
     }
 }
