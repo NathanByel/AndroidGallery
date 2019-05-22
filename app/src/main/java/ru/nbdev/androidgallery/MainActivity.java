@@ -36,16 +36,23 @@ import ru.nbdev.androidgallery.recycler.RecyclerAdapter;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    private static final String SELECTED_CATEGORY = "SELECTED_CATEGORY";
+    private NavigationView navigationView;
     private DrawerLayout drawer;
     private Toolbar toolbar;
     private FloatingActionButton fab;
     private RecyclerView recyclerView;
     private RecyclerAdapter adapter;
+    private int selectedDrawerItem = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        ThemeSelector.setTheme(this, savedInstanceState);
+        if (savedInstanceState != null) {
+            selectedDrawerItem = savedInstanceState.getInt(SELECTED_CATEGORY);
+        }
+
         setContentView(R.layout.activity_main);
 
         viewInit();
@@ -53,8 +60,31 @@ public class MainActivity extends AppCompatActivity
         fabInit();
         drawerInit();
         recyclerInit();
+    }
 
-        showFruits();
+    @Override
+    protected void onResume() {
+        super.onResume();
+        ThemeSelector.checkCurrentTheme(this);
+
+        if (selectedDrawerItem == 0 || selectedDrawerItem == R.id.nav_nature) {
+            selectedDrawerItem = R.id.nav_fruits;
+        }
+
+        navigationView.setCheckedItem(selectedDrawerItem);
+        if (selectedDrawerItem == R.id.nav_fruits) {
+            showFruits();
+        } else if (selectedDrawerItem == R.id.nav_vegetables) {
+            showVegetables();
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        ThemeSelector.saveState(outState);
+        selectedDrawerItem = navigationView.getCheckedItem().getItemId();
+        outState.putInt(SELECTED_CATEGORY, selectedDrawerItem);
     }
 
     private void viewInit() {
@@ -99,7 +129,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void drawerInit() {
-        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView = findViewById(R.id.nav_view);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -134,22 +164,13 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
+        ThemeSelector.selectThemeByMenuId(this, item);
         return super.onOptionsItemSelected(item);
     }
 
@@ -175,31 +196,31 @@ public class MainActivity extends AppCompatActivity
 
     private void showFruits() {
         List<ImageItem> imagesList = new ArrayList<>();
-        imagesList.add(new ImageItem(R.drawable.fruits1,"text"));
-        imagesList.add(new ImageItem(R.drawable.fruits2,"text"));
-        imagesList.add(new ImageItem(R.drawable.fruits3,"text"));
-        imagesList.add(new ImageItem(R.drawable.fruits4,"text"));
-        imagesList.add(new ImageItem(R.drawable.fruits5,"text"));
-        imagesList.add(new ImageItem(R.drawable.fruits1,"text"));
-        imagesList.add(new ImageItem(R.drawable.fruits2,"text"));
-        imagesList.add(new ImageItem(R.drawable.fruits3,"text"));
-        imagesList.add(new ImageItem(R.drawable.fruits4,"text"));
-        imagesList.add(new ImageItem(R.drawable.fruits5,"text"));
+        imagesList.add(new ImageItem(R.drawable.fruits1, "text"));
+        imagesList.add(new ImageItem(R.drawable.fruits2, "text"));
+        imagesList.add(new ImageItem(R.drawable.fruits3, "text"));
+        imagesList.add(new ImageItem(R.drawable.fruits4, "text"));
+        imagesList.add(new ImageItem(R.drawable.fruits5, "text"));
+        imagesList.add(new ImageItem(R.drawable.fruits1, "text"));
+        imagesList.add(new ImageItem(R.drawable.fruits2, "text"));
+        imagesList.add(new ImageItem(R.drawable.fruits3, "text"));
+        imagesList.add(new ImageItem(R.drawable.fruits4, "text"));
+        imagesList.add(new ImageItem(R.drawable.fruits5, "text"));
         adapter.swapData(imagesList);
     }
 
     private void showVegetables() {
         List<ImageItem> imagesList = new ArrayList<>();
-        imagesList.add(new ImageItem(R.drawable.vegetables1,"text"));
-        imagesList.add(new ImageItem(R.drawable.vegetables2,"text"));
-        imagesList.add(new ImageItem(R.drawable.vegetables3,"text"));
-        imagesList.add(new ImageItem(R.drawable.vegetables4,"text"));
-        imagesList.add(new ImageItem(R.drawable.vegetables5,"text"));
-        imagesList.add(new ImageItem(R.drawable.vegetables1,"text"));
-        imagesList.add(new ImageItem(R.drawable.vegetables2,"text"));
-        imagesList.add(new ImageItem(R.drawable.vegetables3,"text"));
-        imagesList.add(new ImageItem(R.drawable.vegetables4,"text"));
-        imagesList.add(new ImageItem(R.drawable.vegetables5,"text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables1, "text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables2, "text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables3, "text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables4, "text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables5, "text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables1, "text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables2, "text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables3, "text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables4, "text"));
+        imagesList.add(new ImageItem(R.drawable.vegetables5, "text"));
         adapter.swapData(imagesList);
     }
 
